@@ -41,7 +41,12 @@ function generatePassword() {
     alert("Passwords must be between 8 and 128 characters long");
     prompt("Please select the number of characters ( Min 8 - Max 128 ) you would like included");
   }
-  else if (length > 8); {
+
+  if (length > 128) {
+    alert("Passwords must be between 8 and 128 characters long");
+    prompt("Please select the number of characters ( Min 8 - Max 128 ) you would like included");
+  }
+  else if (length >= 8 && length <= 128); {
 
   }
   // WHEN prompted for password criteria
