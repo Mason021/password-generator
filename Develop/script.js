@@ -9,11 +9,11 @@
 // THEN I am presented with a series of prompts for password criteria
 window.alert("Password must be at least 8 characters and no more than 128 characters in length.  Please select from the prompts to create a new random password");
 
-special = confirm("Include Special Characters (@#$%)?");
-lowerCase = confirm("Include Lowercase Characters (abcd...)?");
-upperCase = confirm("Include Uppercase Characters (ABCD...)?");
-numeric = confirm("Include Numeric Characters (1234)?");
-// prompts for user usage
+// special = confirm("Include Special Characters (@#$%)?");
+// lowerCase = confirm("Include Lowercase Characters (abcd...)?");
+// upperCase = confirm("Include Uppercase Characters (ABCD...)?");
+// numeric = confirm("Include Numeric Characters (1234)?");
+// // prompts for user usage
 
 // var lowerCase = confirm("Include Lowercase Characters (abcd...)?")
 // var upperCase = confirm("Include Uppercase Characters (ABCD...)?")
@@ -26,15 +26,22 @@ var upperCaseCharacters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"
 var numericCharactersValue = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 var specialCharacters = ["\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~", "!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:"];
 
-function newPassword() {
 
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+// WHEN prompted for the length of the password
+// THEN I choose a length of at least 8 characters and no more than 128 characte
 //setting the length the user wants the password to be//
-  length = parseInt(prompt("Please select the number of characters ( Min 8 - Max 128 ) you would like included "));
+length = parseInt(prompt("Please select the number of characters ( Min 8 - Max 128 ) you would like included"));
 
-  if (length < 8) {
+if (length < 8) {
     alert("Passwords must be between 8 and 128 characters long");
     prompt("Please select the number of characters ( Min 8 - Max 128 ) you would like included");
-}
+    }
+    else if (length > 8 ); {
+
+    }
 // WHEN prompted for password criteria
 // THEN I select which criteria to include in the password
 // WHEN prompted for password criteria
@@ -43,8 +50,20 @@ special = confirm("Include Special Characters (@#$%)?");
 lowerCase = confirm("Include Lowercase Characters (abcd...)?");
 upperCase = confirm("Include Uppercase Characters (ABCD...)?");
 numeric = confirm("Include Numeric Characters (1234)?");
-// WHEN prompted for password criteria
-// THEN I select which criteria to include in the password
+
+ if (special === true) {
+
+ }
+ if (lowerCase === true) {
+
+ }
+ if (upperCase === true) {
+
+ }
+ if (numeric = true) {
+
+ }
+
 
 // WHEN prompted for the length of the password
 // THEN I choose a length of at least 8 characters and no more than 128 character
