@@ -4,17 +4,31 @@
 
 // WHEN I click the button to generate a password
 // THEN I am presented with a series of prompts for password criteria
-window.alert("Password must be at least 8 characters and no more than 128 characters in length.  Please select from the prompts to create a new random password");
-var length = 
-var lowerCase = confirm("Include Lowercase Characters (abcd...)?")
-var upperCase = confirm("Include Uppercase Characters (ABCD...)?")
-var numeric = confirm("Include Numeric Characters (1234)?")
-var special = confirm("Include Special Characters (@#$%)")
+window.alert("Password must be at least 8 characters and no more than 128 characters in length.  Please select from the prompts to create a new random password"); 
+// prompts for user usage
 
-var lowerCaseCharacters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-var upperCaseCharacters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-var numericCharactersValue = Math.floor(Math.random() * 9) + 128;
-var specialCharacters = ["!","#","$","%","&","@"]
+// var lowerCase = confirm("Include Lowercase Characters (abcd...)?")
+// var upperCase = confirm("Include Uppercase Characters (ABCD...)?")
+// var numeric = confirm("Include Numeric Characters (1234)?")
+// var special = confirm("Include Special Characters (@#$%)")
+
+// my character variables 
+var lowerCaseCharacters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var upperCaseCharacters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var numericCharactersValue = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+var specialCharacters = ["\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~", "!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:"]
+
+var freshPassWord = [];
+
+
+  //setting the length the user wants the password to be//
+var length = parseInt(prompt("Please select the number of characters ( Min 8 - Max 128 ) you would like included "));
+
+if (length < 8) {
+  alert("Passwords must be between 8 and 128 characters long");
+  prompt("Please select the number of characters ( Min 8 - Max 128 ) you would like included");
+}
+
 
 // WHEN prompted for password criteria
 // THEN I select which criteria to include in the password
