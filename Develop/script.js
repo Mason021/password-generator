@@ -7,7 +7,7 @@
 // Add event listener to generate button
 
 // THEN I am presented with a series of prompts for password criteria
-window.alert("Password must be at least 8 characters and no more than 128 characters in length.  Please select from the prompts to create a new random password");
+// window.alert("Password must be at least 8 characters and no more than 128 characters in length.  Please select from the prompts to create a new random password");
 
 // special = confirm("Include Special Characters (@#$%)?");
 // lowerCase = confirm("Include Lowercase Characters (abcd...)?");
@@ -28,52 +28,60 @@ var specialCharacters = ["\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " 
 
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+// generateBtn.addEventListener("click", writePassword);
 
-// WHEN prompted for the length of the password
-// THEN I choose a length of at least 8 characters and no more than 128 characte
-//setting the length the user wants the password to be//
-length = parseInt(prompt("Please select the number of characters ( Min 8 - Max 128 ) you would like included"));
+//function writePassword() {
+function generatePassword() {
+  // WHEN prompted for the length of the password
+  // THEN I choose a length of at least 8 characters and no more than 128 characte
+  //setting the length the user wants the password to be//
+  length = parseInt(prompt("Please select the number of characters ( Min 8 - Max 128 ) you would like included"));
 
-if (length < 8) {
+  if (length < 8) {
     alert("Passwords must be between 8 and 128 characters long");
     prompt("Please select the number of characters ( Min 8 - Max 128 ) you would like included");
-    }
-    else if (length > 8 ); {
+  }
+  else if (length > 8); {
 
-    }
-// WHEN prompted for password criteria
-// THEN I select which criteria to include in the password
-// WHEN prompted for password criteria
-// THEN I select which criteria to include in the password
-special = confirm("Include Special Characters (@#$%)?");
-lowerCase = confirm("Include Lowercase Characters (abcd...)?");
-upperCase = confirm("Include Uppercase Characters (ABCD...)?");
-numeric = confirm("Include Numeric Characters (1234)?");
+  }
+  // WHEN prompted for password criteria
+  // THEN I select which criteria to include in the password
+  // WHEN prompted for password criteria
+  // THEN I select which criteria to include in the password
 
- if (special === true) {
+  // WHEN asked for character types to include in the password
+  // THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
+  special = confirm("Include Special Characters (@#$%)?");
+  lowerCase = confirm("Include Lowercase Characters (abcd...)?");
+  upperCase = confirm("Include Uppercase Characters (ABCD...)?");
+  numeric = confirm("Include Numeric Characters (1234)?");
+  // WHEN I answer each prompt
+  // THEN my input should be validated and at least one character type should be selected
+  var passwordBox = []
 
- }
- if (lowerCase === true) {
+  if (special === true) {
+    passwordBox = (passwordBox.concat(specialCharacters))
+  }
+  if (lowerCase === true) {
+    passwordBox = (passwordBox.concat(lowerCaseCharacters))
+  }
+  if (upperCase === true) {
+    passwordBox = (passwordBox.concat(upperCaseCharacters))
+  }
+  if (numeric = true) {
+    passwordBox = (passwordBox.concat(numericCharactersValue))
+  }
 
- }
- if (upperCase === true) {
-
- }
- if (numeric = true) {
-
- }
-
-
-// WHEN prompted for the length of the password
-// THEN I choose a length of at least 8 characters and no more than 128 character
-
-// WHEN asked for character types to include in the password
-// THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
-
-// WHEN I answer each prompt
-// THEN my input should be validated and at least one character type should be selected
-
+  var completedString = ""
+for (i=0; i< length; i++) {
+  var passwordMix = Math.floor(Math.random()*passwordBox.length)
+  var randomMix = passwordBox[passwordMix]
+  completedString += randomMix
+  console.log(randomMix, passwordMix)
+}
+  
+  return completedString
+}
 // WHEN all prompts are answered
 // THEN a password is generated that matches the selected criteria
 
