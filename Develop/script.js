@@ -7,6 +7,18 @@
 // Add event listener to generate button
 
 // THEN I am presented with a series of prompts for password criteria
+// window.alert("Password must be at least 8 characters and no more than 128 characters in length.  Please select from the prompts to create a new random password");
+
+// special = confirm("Include Special Characters (@#$%)?");
+// lowerCase = confirm("Include Lowercase Characters (abcd...)?");
+// upperCase = confirm("Include Uppercase Characters (ABCD...)?");
+// numeric = confirm("Include Numeric Characters (1234)?");
+// // prompts for user usage
+
+// var lowerCase = confirm("Include Lowercase Characters (abcd...)?")
+// var upperCase = confirm("Include Uppercase Characters (ABCD...)?")
+// var numeric = confirm("Include Numeric Characters (1234)?")
+// var special = confirm("Include Special Characters (@#$%)")
 
 // my character variables 
 var lowerCaseCharacters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -14,10 +26,14 @@ var upperCaseCharacters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"
 var numericCharactersValue = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 var specialCharacters = ["\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~", "!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:"];
 
+
+// Add event listener to generate button
+// generateBtn.addEventListener("click", writePassword);
+
 //function writePassword() {
 function generatePassword() {
   // WHEN prompted for the length of the password
-  // THEN I choose a length of at least 8 characters and no more than 128 characters
+  // THEN I choose a length of at least 8 characters and no more than 128 characte
   //setting the length the user wants the password to be//
   length = parseInt(prompt("Please select the number of characters ( Min 8 - Max 128 ) you would like included"));
 
@@ -30,10 +46,11 @@ function generatePassword() {
     alert("Passwords must be between 8 and 128 characters long");
     prompt("Please select the number of characters ( Min 8 - Max 128 ) you would like included");
   }
-
   else if (length >= 8 && length <= 128); {
-  }
 
+  }
+  // WHEN prompted for password criteria
+  // THEN I select which criteria to include in the password
   // WHEN prompted for password criteria
   // THEN I select which criteria to include in the password
 
@@ -59,8 +76,7 @@ function generatePassword() {
   if (numeric = true) {
     passwordBox = (passwordBox.concat(numericCharactersValue))
   }
-// WHEN all prompts are answered
-// THEN a password is generated that matches the selected criteria
+
   var completedString = ""
 for (i=0; i< length; i++) {
   var passwordMix = Math.floor(Math.random()*passwordBox.length)
@@ -68,10 +84,13 @@ for (i=0; i< length; i++) {
   completedString += randomMix
   console.log(randomMix, passwordMix)
 }
- // WHEN the password is generated
-// THEN the password is either displayed in an alert or written to the page 
+// WHEN the password is generated
+// THEN the password is either displayed in an alert or written to the page
   return completedString
 }
+// WHEN all prompts are answered
+// THEN a password is generated that matches the selected criteria
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
